@@ -1,3 +1,6 @@
+pip install -r requirements.txt
+
+
 import streamlit as st
 import tensorflow as tf
 import cv2
