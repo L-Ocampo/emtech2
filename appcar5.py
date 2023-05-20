@@ -1,5 +1,8 @@
-pip install tensorflow 
+
 import streamlit as st
+import cv2
+import numpy as np
+from PIL import Image,ImageOps
 import tensorflow as tf
 
 @st.cache_resource
@@ -12,9 +15,6 @@ st.write("""
 )
 file=st.file_uploader("Choose a car photo from computer",type=["jpg","png"])
 
-import cv2
-from PIL import Image,ImageOps
-import numpy as np
 def import_and_predict(image_data,model):
     size=(128,128)
     image=ImageOps.fit(image_data,size,Image.ANTIALIAS)
