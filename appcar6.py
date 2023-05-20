@@ -1,5 +1,5 @@
 import streamlit as st
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from PIL import Image, ImageOps
 import numpy as np
 
