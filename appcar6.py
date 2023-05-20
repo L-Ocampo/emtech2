@@ -1,7 +1,8 @@
 import streamlit as st
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 from PIL import Image, ImageOps
 import numpy as np
+import cv2
 
 def load_model():
     model = tf.keras.models.load_model('cars_classifier.hdf5')
