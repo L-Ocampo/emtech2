@@ -11,6 +11,11 @@ st.markdown(
         background-color: black;
         color: white;
         font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
     .stApp {
         max-width: 800px;
