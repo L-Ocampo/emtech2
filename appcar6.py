@@ -18,7 +18,7 @@ file = st.file_uploader("Choose a car photo from your computer", type=["jpg", "p
 
 def import_and_predict(image_data, model):
     size = (128, 128)
-    image = ImageOps.fit(image_data, size, Image.ANTIALIAS)  # Use Image.ANTIALIAS directly
+    image = ImageOps.fit(image_data, size, Image.LANCZOS)  # Use Image.LANCZOS resampling filter
     img = np.asarray(image)
     img_reshape = img[np.newaxis, ...]
     prediction = model.predict(img_reshape)
