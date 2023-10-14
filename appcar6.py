@@ -34,18 +34,47 @@ def import_and_predict(image_data, model):
     prediction = model.predict(img_reshape)
     return prediction
 
-# Display results
-if file is None:
-    st.warning("Please upload an image file.")
-else:
-    image = Image.open(file)
+# Add custom CSS for styling
+st.markdown(
+    """
+    <style>
+    /* Add custom CSS here */
+    .stButton > button {
+        background-color: #3498db;
+        color: #fff;
+        font-weight: bold;
+    }
+    .stButton > button:hover {
+        background-color: #45aaf2;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Set the background color
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f0f0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Create a button to trigger image classification
+if file is not None:
+    st.subheader("Uploaded Image:")
     st.image(image, caption="Uploaded Image", use_column_width=True)
 
-    prediction = import_and_predict(image, model)
-    class_names = ['Audi', 'Hyundai Creta', 'Mahindra Scorpio', 'Rolls Royce', 'Swift', 'Tata Safari', 'Toyota Innova']
-    class_index = np.argmax(prediction)
-    class_name = class_names[class_index]
+    if st.button("Classify"):
+        prediction = import_and_predict(image, model)
+        class_names = ['Audi', 'Hyundai Creta', 'Mahindra Scorpio', 'Rolls Royce', 'Swift', 'Tata Safari', 'Toyota Innova']
+        class_index = np.argmax(prediction)
+        class_name = class_names[class_index]
 
-    st.subheader("Prediction:")
-    st.write(f"Class: {class_name}")
-    st.write(f"Confidence: {prediction[0][class_index]:.2%}")
+        st.subheader("Prediction:")
+        st.write(f"Class: {class_name}")
+        st.write(f"Confidence: {prediction[0][class_index]:.2%}")
