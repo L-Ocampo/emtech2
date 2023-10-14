@@ -3,6 +3,18 @@ import tensorflow as tf
 from PIL import Image, ImageOps
 import numpy as np
 
+# Set the background color to black using markdown
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: black;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 @st.cache_resource
 def load_model():
     model = tf.keras.models.load_model('cars_classifier.hdf5')
