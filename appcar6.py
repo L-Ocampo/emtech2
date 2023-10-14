@@ -3,7 +3,7 @@ import tensorflow as tf
 from PIL import Image, ImageOps
 import numpy as np
 
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_model():
     model = tf.keras.models.load_model('cars_classifier.hdf5')
     return model
@@ -18,7 +18,7 @@ file = st.file_uploader("Choose a car photo from your computer", type=["jpg", "p
 
 def import_and_predict(image_data, model):
     size = (128, 128)
-    image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+    image = ImageOps.fit(image_data, size, 'antialias')
     img = np.asarray(image)
     img_reshape = img[np.newaxis, ...]
     prediction = model.predict(img_reshape)
