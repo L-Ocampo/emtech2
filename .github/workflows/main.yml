@@ -25,4 +25,4 @@ jobs:
 
     - name: Lint code with Flake8
       run: |
-        flake8 your_source_code_directory
+        flake8 appcar5.py
