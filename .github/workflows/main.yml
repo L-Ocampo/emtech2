@@ -18,8 +18,8 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Install Pylint
-      run: pip install pylint
+    - name: Install pyflakes
+      run: pip install pyflakes
 
-    - name: Run Pylint
-      run: pylint appcar5.py
+    - name: Run pyflakes
+      run: pyflakes appcar5.py
