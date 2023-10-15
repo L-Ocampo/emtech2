@@ -1,12 +1,12 @@
-name: Code Analysis with Pylint
+name: Streamlit Car Classifier
 
 on:
   push:
     branches:
-      - '*'
+      - main
 
 jobs:
-  analyze:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,11 +18,11 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Install Pylint
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
+        pip install streamlit tensorflow Pillow
 
-    - name: Run Pylint
+    - name: Run Streamlit app
       run: |
-        pylint appcar5
+        streamlit run appcar5.py
