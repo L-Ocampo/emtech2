@@ -1,12 +1,12 @@
-name: CI/CD Pipeline
+name: Code Validation
 
 on:
   push:
     branches:
-      - main
+      - '*'
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,12 +18,11 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Install dependencies
+    - name: Install Flake8
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install flake8
 
     - name: Lint code with Flake8
       run: |
-        pip install flake8
         flake8 your_source_code_directory
