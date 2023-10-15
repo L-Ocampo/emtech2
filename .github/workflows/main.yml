@@ -2,8 +2,6 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   build:
@@ -30,7 +28,3 @@ jobs:
     - name: Run tests
       run: |
         python -m pytest
-
-    - name: Deploy to staging (if tests pass)
-      if: success()
-      run: ./deploy-staging.sh
