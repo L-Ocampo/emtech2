@@ -25,4 +25,4 @@ jobs:
 
     - name: Run Pylint
       run: |
-        pylint emtech2
+        pylint appcar5
