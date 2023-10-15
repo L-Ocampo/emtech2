@@ -22,7 +22,9 @@ jobs:
           python-version: 3.8
 
       - name: Install Dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install flake8  # Add this line to install flake8
 
       - name: Run flake8 Syntax Check
         run: flake8 --exclude=venv,.git
