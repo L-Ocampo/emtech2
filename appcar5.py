@@ -15,7 +15,7 @@ st.write("Upload a car photo, and I'll classify it into one of the following cat
 
 # Sidebar with explanation and credit
 st.sidebar.header("About")
-st.sidebar.markdown("This app uses a deep learning model to classify car images."):
+st.sidebar.markdown("This app uses a deep learning model to classify car images.")
 st.sidebar.markdown("Model credit: [Link to Model Source]")
 st.sidebar.markdown("App developed by [Your Name]")
 
@@ -36,7 +36,7 @@ def import_and_predict(image_data, model):
 
 # Display results
 if file is None:
-    st.warning("Please upload an image file."):
+    st.warning("Please upload an image file.")
 else:
     image = Image.open(file)
     st.image(image, caption="Uploaded Image", use_column_width=True)
