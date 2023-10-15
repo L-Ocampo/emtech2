@@ -20,7 +20,7 @@ st.sidebar.markdown("Model credit:")
 st.sidebar.markdown("App developed by Laurence Ocampo")
 
 # Upload image
-file = st.file_uploader("Choose a car photo from your computer", type=["jpg", "png"])
+file = st.file_uploader("Choose a car photo ", type=["jpg", "png"])
 
 # Load the model
 model = load_model()
