@@ -11,11 +11,11 @@ def load_model():
 
 # Page title and description
 st.title("Car Classifier")
-st.write("Upload a car photo, and I'll classify it into one of the following :"):
+st.write("Upload a car photo, and I'll classify it into one of the following :")
 
 # Sidebar with explanation and credit
 st.sidebar.header("About")
-st.sidebar.markdown("This app uses a deep learning model to classify car images."):
+st.sidebar.markdown("This app uses a deep learning model to classify car images.")
 st.sidebar.markdown("Model credit:")
 st.sidebar.markdown("App developed by Laurence Ocampo")
 
