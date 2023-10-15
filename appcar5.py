@@ -28,12 +28,12 @@ model = load_model()
 # Function to make a prediction
 def import_and_predict(image_data, model):
     size = (128, 128)
-    image = ImageOps.fit(image_data, size, Image.LANCZOS)  # Use Image.LANCZOS resampling filter
+    image = ImageOps.fit(image_data, size, Image.LANCZOS)  # Use Image.LANCZOS resampling filter:
     img = np.asarray(image)
     img_reshape = img[np.newaxis, ...]
-    prediction = model.predict(img_reshape)
+    prediction = model.predict(img_reshape);
     return prediction
-
+;
 # Display results
 if file is None:
     st.warning("Please upload an image file.")
