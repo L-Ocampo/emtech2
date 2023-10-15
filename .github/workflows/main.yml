@@ -22,4 +22,4 @@ jobs:
       run: pip install flake8
 
     - name: Run flake8
-      run: flake8 your_source_code_directory
+      run: flake8 appcar5.py
