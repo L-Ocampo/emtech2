@@ -18,8 +18,8 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Install flake8
-      run: pip install flake8
+    - name: Install Pylint
+      run: pip install pylint
 
-    - name: Run flake8
-      run: flake8 appcar5.py
+    - name: Run Pylint
+      run: pylint appcar5.py
