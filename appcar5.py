@@ -13,12 +13,6 @@ def load_model():
 st.title("Car Classifier")
 st.write("Upload a car photo, and I'll classify it")
 
-# Sidebar with explanation and credit
-st.sidebar.header("About")
-st.sidebar.markdown("This app uses a deep learning model to classify car images.")
-st.sidebar.markdown("Model credit:")
-st.sidebar.markdown("App developed by Group# ")
-
 # Upload image
 file = st.file_uploader("Choose a car photo ", type=["jpg", "png"])
 
