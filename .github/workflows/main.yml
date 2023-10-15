@@ -25,4 +25,4 @@ jobs:
 
     - name: Run Pylint
       run: |
-        pylint your_source_code_directory
+        pylint emtech2
