@@ -14,7 +14,7 @@ st.title("Car Classifier")
 st.write("Upload a car photo, and I'll classify it")
 
 # Upload image
-file = st.file_uploader("Choose a car photo ", type=["jpg", "png"])
+file = st.file_uploader("Choose a car photo ", type=["jpg", "png"]):
 
 # Load the model
 model = load_model()
