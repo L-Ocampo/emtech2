@@ -11,10 +11,16 @@ def load_model():
 
 # Page title and description
 st.title("Car Classifier")
-st.write("Upload a car photo, and I'll classify it")
+st.write("Upload a car photo, and I'll classify it into one of the following categories:")
+
+# Sidebar with explanation and credit
+st.sidebar.header("About")
+st.sidebar.markdown("This app uses a deep learning model to classify car images.")
+st.sidebar.markdown("Model credit: [Link to Model Source]")
+st.sidebar.markdown("App developed by [Your Name]")
 
 # Upload image
-file = st.file_uploader("Choose a car photo ", type=["jpg", "png"])
+file = st.file_uploader("Choose a car photo from your computer", type=["jpg", "png"])
 
 # Load the model
 model = load_model()
